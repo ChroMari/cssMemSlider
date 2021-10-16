@@ -61,12 +61,11 @@ body {
   margin-top: 1.3rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .app__text-slider {
   width: 50%;
-  height: 1rem;
   overflow: hidden;
 }
 
@@ -84,12 +83,19 @@ body {
   color: rgba(255,255,255,.6);
 }
 
+.app__pointers {
+  display: flex;
+}
+
 .app__pointers label {
-   display: inline-block;
+   display: block;
    width: 1.5rem;
    height: 1.5rem;
-   /* border-radius: 50%; */
    cursor: pointer;
+}
+
+.app__pointers label + .app__pointers label {
+  margin-left: 0.8rem;
 }
 
 .app__pointers label:hover .app__pointers-item{
@@ -102,7 +108,6 @@ body {
   height: 1rem;
   border-radius: 50%;
   cursor: pointer;
-  margin: 0 0.8rem;
   display: block;
   background: rgb(24 240 119);
 }
@@ -130,4 +135,35 @@ body {
 #slide4:checked ~ .app__content .app__pointers label:nth-child(4) .app__pointers-item{
   border: 0.125rem solid rgb(24 240 119);
   background: transparent;
+}
+
+@media (max-width: 420px) {
+  .app {
+    width: 100%;
+    padding: 1.6rem 0.7rem;
+  }
+
+  .app__slider {
+    height: 12rem;
+  }
+
+  .app__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app__text-slider  {
+    order: 1;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .app__text-container {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .app__pointers {
+    order: 0;
+  }
 }
