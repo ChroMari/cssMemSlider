@@ -103,6 +103,11 @@ body {
   border-color: #fff !important;
 }
 
+.app__pointers label:active .app__pointers-item {
+  background-color: #f0d118;
+  border-color: #f0d118 !important;
+}
+
 .app__pointers-item {
   width: 1rem;
   height: 1rem;
@@ -110,6 +115,7 @@ body {
   cursor: pointer;
   display: block;
   background: rgb(24 240 119);
+  transition: all 0.3s;
 }
 
 #slide1:checked ~ .app__slider .app__slider-container,
